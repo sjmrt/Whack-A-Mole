@@ -1,0 +1,60 @@
+body {
+        color: white;
+    }
+.container {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+}
+.main-box {
+  position: absolute;
+  border: solid black 1px;
+  height: 600px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.sub-box {
+  position: relative;
+  border: solid black 1px;
+  height: 198px;
+  width: 198px;
+  float: left;
+}
+.mole {
+  display: none;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.no-pad {
+  padding: 0px;
+  margin: 0px;
+}
+.box-header {
+  margin: 0px auto;
+  width: 596px;
+}
+.buttons {
+  position: relative;
+  margin-top: -40px;
+  margin-left: 201px;
+  height: 80px;
+  width: 600px;
+}
+#timer {
+  border: solid black 1px;
+  font-size: 50px;
+  color: red;
+  position: relative;
+  display:none;
+}
+#scorebox {
+  border: solid black 1px;
+  font-size: 50px;
+  color: purple;
+  position: relative;
+  display:none; 
+}
