@@ -9,9 +9,10 @@ $(document).ready(function() {
         main: $('#main-box'),
         lils: $('.sub-box'),
         round: null,
+        timerloop: null,
 
         genRand: function(){
-            return Math.floor(Math.random() * 9) + 1;
+            return Math.floor(Math.random() * 15) + 1;
         },
 
         runGame: function(){
@@ -26,7 +27,7 @@ $(document).ready(function() {
                 game.moles.off();
                 var randNum = game.genRand();
                 var randBox = game.moles.get(randNum - 1);           
-                $(randBox).fadeIn(500);
+                $(randBox).fadeIn(300);
                 $(randBox).click(function() {
                     // $(this).off();
                     game.score += 10;
@@ -42,7 +43,7 @@ $(document).ready(function() {
         stopGame: function(){
             clearInterval(this.round);        
             this.moles.fadeOut(1000);
-            clearInterval();
+            clearInterval(this.timerloop);
             this.timer.fadeOut(1000);
         },
 
@@ -50,7 +51,7 @@ $(document).ready(function() {
             this.time = 60;
             this.timer.html(this.time);
             this.timer.fadeIn();
-            var timerloop = setInterval(function () {
+            this.timerloop = setInterval(function () {
                 game.time--;
                 game.timer.html(game.time);
             }, 1000);
@@ -60,8 +61,11 @@ $(document).ready(function() {
 
     $('#start-btn').click(function(){
         game.runGame();
+        $('#start-btn').hide();
+
     });
     $('#stop-btn').click(function(){
         game.stopGame();
+        $('#start-btn').show();
     });        
 });
