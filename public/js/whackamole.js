@@ -6,18 +6,43 @@ $(document).ready(function() {
         score: 0,
         scorebox: $('#scorebox'),
         moles: $('.mole'),
-        main: $('#main-box'),
-        lils: $('.sub-box'),
         round: null,
         timerloop: null,
+        startbutton: $('#start-btn'),
+        difficulty: 1,
+        increment: 1000,
+        difficultyList: $('#difficulty'),
+
+        switchDifficulty: function(){
+            var difficulty = $('select[name="difficulty"]').val();
+            var multiplier = '';
+            switch(difficulty)
+            {
+                case '2':
+                    multiplier= 2;
+                    break;
+                
+                case '1':
+                    multiplier= 1;
+                    break;
+
+                case '0.5':
+                    multiplier= 0.5;
+                    break;
+            }
+            game.increment *= multiplier;
+        },
 
         genRand: function(){
             return Math.floor(Math.random() * 15) + 1;
         },
 
         runGame: function(){
-            var increment = 1000;
-            
+            game.increment = 1000;
+            this.switchDifficulty();
+            console.log(this.increment);
+            this.startbutton.hide();
+            this.difficultyList.hide();
             this.score = 0;
             this.scorebox.html(this.score);
             this.scorebox.fadeIn();
@@ -26,18 +51,24 @@ $(document).ready(function() {
                 game.moles.fadeOut();
                 game.moles.off();
                 var randNum = game.genRand();
-                var randBox = game.moles.get(randNum - 1);           
-                $(randBox).fadeIn(300);
+                var randBox = game.moles.eq(randNum - 1);
+                
+
+                $(randBox).fadeIn(500);
                 $(randBox).click(function() {
-                    // $(this).off();
                     game.score += 10;
                     game.scorebox.html(game.score);
-                    $(this).fadeOut();
+                    $(this).hide("explode", {pieces: 36 }, 1000);
                 });
                 if (game.time <= 0) {
                     game.stopGame();
+                    if(game.score >= 250){
+                        alert('You have won this battle!');
+                    } else{
+                        alert('DEFEATED!');
+                    };
                 };
-            }, increment);
+            }, this.increment);
         },
 
         stopGame: function(){
@@ -45,6 +76,8 @@ $(document).ready(function() {
             this.moles.fadeOut(1000);
             clearInterval(this.timerloop);
             this.timer.fadeOut(1000);
+            this.startbutton.show();
+            this.difficultyList.show();
         },
 
         runTimer: function(){
@@ -61,11 +94,8 @@ $(document).ready(function() {
 
     $('#start-btn').click(function(){
         game.runGame();
-        $('#start-btn').hide();
-
     });
     $('#stop-btn').click(function(){
-        game.stopGame();
-        $('#start-btn').show();
+        game.stopGame();   
     });        
 });

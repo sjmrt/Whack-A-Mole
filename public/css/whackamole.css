@@ -3,35 +3,34 @@ body {
         cursor: url('/img/phaser.png'), auto;
     }
 body:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    opacity: 0.8;
-    background-image: url('/img/ds9.jpg');
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    -ms-background-size: cover;
-    -o-background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.8;
+  background-image: url('/img/ds9.jpg');
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .container {
   position: relative;
   margin: 0 auto;
-  width: 800px;
+  width: 1200px;
   cursor: url('/img/phaser.png'), auto;
 }
-
 .main-box {
   position: absolute;
   height: 600px;
-  width: 1000px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
@@ -43,15 +42,13 @@ body:before {
   height: 198px;
   width: 198px;
   float: left;
-  border: solid-black 2px;
 }
-
 .mole {
   display: none;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: 198px;
   border-radius: 50%;
-  
+  border: 8px solid rgba(170, 0, 0, .2);
 }
 .no-pad {
   padding: 0px;
@@ -61,11 +58,12 @@ body:before {
   margin: 0px auto;
   width: 596px;
 }
-.buttons {
-  height: 80px;
-  width: 600px;
-  z-index: 10;
-}
+.control-panel{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+/*  border: 3px solid rgba(170, 0, 0, .3);
+*/}
 #timer {
   font-size: 50px;
   color: red;
@@ -74,7 +72,34 @@ body:before {
 }
 #scorebox {
   font-size: 50px;
-  color: purple;
+  color: steelblue;
   position: relative;
   display:none; 
+}
+#difficulty{
+  position: relative;
+  top: 2px;
+  left: 20px;
+}
+#start-btn, #stop-btn {
+  border-radius: 40%;
+}
+#start-btn:focus:active{
+  outline: none;
+}
+#start-btn{
+  outline: none;
+  border: none;
+  position: relative;
+  top: 23px;
+  left: 18px;
+  z-index: 10;
+}
+#stop-btn{
+  outline: none;
+  border: none;
+  position: relative;
+  top: 30px;
+  left: 59px;
+  z-index: 10;
 }

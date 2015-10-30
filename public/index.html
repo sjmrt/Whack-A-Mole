@@ -2,21 +2,27 @@
 <html>
 <head>
 	<title>Whack-A-Mole!</title>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="css/whackamole.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/whackamole.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 </head>
 <body>
 
 	<div class="container">
-    
-	    <div id="scorebox">Units of Ketracel White Saved:</div>
-	    <div id="timer">timer</div>
-
-	    <div class="buttons">
-	        <button id="start-btn" class=""> SET PHASERS TO KILL </button>
-	        <button id="stop-btn" class=""> RETREAT </button>
-	    </div>
+    	<div class="control-panel">
+	    	<div id="scorebox"></div>
+	    	<div id="timer"></div>
+	    	<select name="difficulty" id="difficulty" class="dropdrown">
+					<option value="2">Easy</option>
+					<option value="1" selected>Normal</option>
+					<option value="0.5">Hard</option>		
+			</select> 
+	        <button id="start-btn" class="btn-warning"> SET PHASERS TO KILL </button>
+	        <button id="stop-btn" class="btn-danger">  RETREAT  </button>
+	    	
+	    </div> <!-- End control panel -->
 
 	    <div id="main-box" class="main-box">
 
@@ -36,46 +42,54 @@
 	            <div id="5" class="sub-box">
 	                <img class="mole" src="/img/jem7.gif">
 	            </div>
+	            <div id="6" class="sub-box">
+	                <img class="mole" src="/img/jem9.jpg">
+	            </div>
 	        </div> <!-- End of Row -->
 
 	        <div class="row no-pad">
-	            <div id="6" class="sub-box">
+	            <div id="7" class="sub-box">
 	                <img class="mole" src="/img/jem4.jpg">
 	            </div>
-	            <div id="7" class="sub-box">
+	            <div id="8" class="sub-box">
 	                <img class="mole" src="/img/jem5.jpg">
 	            </div>
-	            <div id="8" class="sub-box">
-	                <img class="mole" src="/img/jem6.jpg">
-	            </div>
 	            <div id="9" class="sub-box">
-	                <img class="mole" src="/img/jem7.gif">
+	                <img class="mole" src="/img/jem6.jpg">
 	            </div>
 	            <div id="10" class="sub-box">
 	                <img class="mole" src="/img/jem7.gif">
 	            </div>
+	            <div id="11" class="sub-box">
+	                <img class="mole" src="/img/jem1.jpg">
+	            </div>
+	            <div id="12" class="sub-box">
+	                <img class="mole" src="/img/jem2.jpg">
+	            </div>
 	        </div> <!-- End of Row -->
 
 	        <div class="row no-pad">
-	            <div id="11" class="sub-box">
-	                <img class="mole" src="/img/jem7.gif">
-	            </div>
-	            <div id="12" class="sub-box">
-	                <img class="mole" src="/img/jem8.jpeg">
-	            </div>
 	            <div id="13" class="sub-box">
-	                <img class="mole" src="/img/jem9.jpg">
+	                <img class="mole" src="/img/jem7.gif">
 	            </div>
 	            <div id="14" class="sub-box">
-	                <img class="mole" src="/img/jem1.jpg">
+	                <img class="mole" src="/img/jem8.jpeg">
 	            </div>
 	            <div id="15" class="sub-box">
-	                <img class="mole" src="/img/jem7.gif">
+	                <img class="mole" src="/img/jem9.jpg">
 	            </div>
+	            <div id="16" class="sub-box">
+	                <img class="mole" src="/img/jem1.jpg">
+	            </div>
+	            <div id="17" class="sub-box">
+	                <img class="mole" src="/img/jem6.jpg">
+	            </div>
+	            <div id="18" class="sub-box">
+	                <img class="mole" src="/img/jem3.jpg">
+	            </div>
+
 	        </div> <!-- End of Row -->
-
 	    </div> <!-- End Main Box -->
-
 </div> <!-- End Main Container -->
 
 </body>
